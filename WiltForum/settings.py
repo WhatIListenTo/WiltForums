@@ -25,9 +25,11 @@ SECRET_KEY = 'yr*v=5^b6la1$u)9%wn#20#gvohtza30aixztevt_(*5-_#ue1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
-
+AUTH_USER_MODEL = 'users.Member'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'cdn')
+MEDIA_URL = '/'
+STATIC_ROOT = 'static'
 
 # Application definition
 
@@ -38,6 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'sections',
+    'posts',
+    'users',
+    'threads'
 ]
 
 MIDDLEWARE = [
@@ -48,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'WiltForum.urls'
