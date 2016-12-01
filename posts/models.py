@@ -1,3 +1,6 @@
 from django.db import models
+from users.models import Member
 
-# Create your models here.
+
+class Post(models.Model):
+    author = models.ForeignKey(Member)
