@@ -9,4 +9,3 @@ class Post(models.Model):
     thread = models.ForeignKey(Thread)
     body = models.TextField(max_length=20000)
     created_at = models.DateTimeField(auto_now_add=True)
-

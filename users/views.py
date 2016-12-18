@@ -15,3 +15,11 @@ class MemberView(viewsets.ModelViewSet):
         permissions.IsAuthenticatedOrReadOnly,
         # TODO: IsOwnerOrReadOnly
     )
+
+    def get_queryset(self):
+        queryset = Member.objects.all()
+        q = self.request.query_params.get
+
+        if q('get') and q('get') == 'newest':
+            queryset = [queryset.last()]
+        return queryset

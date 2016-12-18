@@ -9,6 +9,7 @@ class Thread(models.Model):
     section = models.ForeignKey(Section)
     op = models.TextField(max_length=20000)
     author = models.ForeignKey(Member)
+    views = models.IntegerField(default=1)
 
     def __str__(self):
         return '%s - %s' % (self.title, self.author.username)

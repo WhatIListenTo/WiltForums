@@ -10,3 +10,12 @@ from .serializers import PostSerializer
 class PostView(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+    def get_queryset(self):
+        queryset = Post.objects.all()
+        q = self.request.query_params.get
+
+        # posts/?latest=10
+        if q('latest'):
+            queryset = queryset.order_by('-created_at')[:int(q('latest'))]
+        return queryset
