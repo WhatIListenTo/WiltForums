@@ -10,6 +10,7 @@ class Member(AbstractUser):
         upload_to='cdn/images/avatars/', null=True, blank=True)
     wilt_name = models.CharField(max_length=40)
     signature = models.CharField(max_length=360)
+    post_count = models.IntegerField(default=0)
 
     def __str__(self):
         return self.username

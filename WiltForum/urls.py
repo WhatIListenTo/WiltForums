@@ -7,9 +7,15 @@ from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken import views
 
 from users.views import MemberView
+from threads.views import ThreadView
+from sections.views import SectionView
+from posts.views import PostView
 
 router = DefaultRouter()
 router.register(r'members', MemberView, base_name='members')
+router.register(r'threads', ThreadView, base_name='threads')
+router.register(r'posts', PostView, base_name='posts')
+router.register(r'sections', SectionView, base_name='sections')
 
 urlpatterns = [
     url(r'^api/', include(router.urls)),

@@ -11,6 +11,4 @@ class Thread(models.Model):
     author = models.ForeignKey(Member)
 
     def __str__(self):
-        return self.title
-
-
+        return '%s - %s' % (self.title, self.author.username)
