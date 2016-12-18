@@ -1,3 +1,39 @@
 *.sqlite3
 *.pyc
 *.swp
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+forums/dist
+forums/tmp
+
+# dependencies
+forums/node_modules
+forums/bower_components
+
+# IDEs and editors
+/.idea
+/.vscode
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# e2e
+forums/e2e/*.js
+forums/e2e/*.map
+
+#System Files
+.DS_Store
+Thumbs.db
